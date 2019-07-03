@@ -30,7 +30,7 @@ public class BladesingerVsTarrasque {
    public static int runCombat() {
       int bInitiative = Math.max((int)(Math.random() * 20 + 6), (int)(Math.random() * 20 + 6));
       int tInitiative = (int)(Math.random() * 20 + 1);
-      int rounds = 0;
+      int rounds = 1;
       int tarrasqueHP = 676;
       int bladesingerHP = 146;
       if (bInitiative >= tInitiative) { // Bladesinger wins initiative ties due to higher Dex
@@ -81,7 +81,7 @@ public class BladesingerVsTarrasque {
       if (isBitten) { // Misty Step out of the Bite to free from restrain
          bonusActionUsed = true;
          isBitten = false;
-      } else if (rounds == 0 || rounds == 11) { //start or refresh Bladesinging
+      } else if (rounds == 1 || rounds == 11) { //start or refresh Bladesinging
          bonusActionUsed = true;
       }
       int damage = 0;
@@ -171,7 +171,7 @@ public class BladesingerVsTarrasque {
    }
    
    public static int tarrasqueTurn(int rounds) {
-      if (rounds == 0) { // Bladesinger immune to frightening presence if they succeed
+      if (rounds == 1) { // Bladesinger immune to frightening presence if they succeed
          if (Math.max((int)(Math.random() * 20), (int)(Math.random() * 20)) < 17) {
             isFrightened = true;
          }
